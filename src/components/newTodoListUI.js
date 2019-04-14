@@ -8,9 +8,9 @@ class newTodoListUI extends React.Component {
     }
     shouldComponentUpdate(nextProps, nextState) {
         if (nextProps.content !== this.props.content) {
-            return true
-        } else {
             return false
+        } else {
+            return true
         }
     }
     render() {

@@ -3,22 +3,22 @@ import axios from 'axios'
 
 export const getInputChangeAction = (value) => ({
     type: CHANGE_INPUT_VALUE,
-    value: value
+    value
 })
 
 export const getAddItemAction = (value) => ({
     type: ADD_TODO_ITEM,
-    value: value
+    value
 })
 
 export const getDelItemAction = (value) => ({
     type: DEL_TODO_ITEM,
-    value: value
+    value
 })
 
 export const getInitListAction = (value) => ({
     type: INIT_LIST,
-    value: value
+    value
 })
 
 
