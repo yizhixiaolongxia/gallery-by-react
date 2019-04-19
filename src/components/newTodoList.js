@@ -1,9 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import store from '../store/'
 import {getInputChangeAction, getAddItemAction, getDelItemAction, getTodoList} from '../store/actionCreators'
 import TodoListUI from './newTodoListUI'
 import {connect} from 'react-redux'
  
+function TestHook() {
+    const [count, setCount] = useState(0)
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount(c => c + 1)
+        }, 1000)
+        return () => clearInterval(interval)
+    })
+    return <div>{count}</div>
+}
+
+// class TestHook extends React.Component {
+//     constructor() {
+//         super()
+//         this.state = {
+//             count: 0
+//         }
+//     }
+//     componentDidMount() {
+//         this.setInter = setInterval(() => {
+//             this.setState({
+//                 count: this.state.count + 1
+//             })
+//         }, 1000)
+//     }
+//     componentWillUnmount() {
+//         clearInterval(this.setInter)
+//     }
+//     render() {
+//         return <div>{this.state.count}</div>
+//     }
+// }
 
 class TodoList extends React.Component {
     // constructor(props) {
@@ -20,6 +53,7 @@ class TodoList extends React.Component {
         const {inputValue,list, handleBtnClick,handleInputChange,deleteItem} = this.props
 
         return (
+            <div>
             <TodoListUI
                 inputValue={inputValue}
                 handleInputChange={handleInputChange}
@@ -27,6 +61,8 @@ class TodoList extends React.Component {
                 deleteItem = {deleteItem}
                 list={list}
             />
+            <TestHook />
+            </div>
         )
     }
     componentDidMount() {

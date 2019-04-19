@@ -159,6 +159,7 @@ Redux = reducer + flux
 
 ### React Hooks
 React 16.8 版本推出了一个新功能 (React Hooks)，通过它，可以更好的在函数定义组件中使用 React 特性
+使函数组件有类组件的功能
 > <b>好处：</b>
 1. 跨组件复用
 2. 类定义更为复杂
